@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/import.css">
+        <link rel="stylesheet" href="/fontawesome/css/all.min.css">
+        <title>Login Form</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="content">
+                <div class="first-column">
+                    <h2 class="title title-primary">Bem-vindo(a) de volta!</h2>
+                    <p class="description description-primary">Novo por aqui?</p>
+                    <p class="description description-primary">Crie uma conta</p>
+                    <button type="button" id="signin" class="btn btn-primary">Sign
+                        in</button>
+                </div>
+                <div class="second-column">
+                    <h2 class="title title-second">Login</h2>
+                    <div class="social-media">
+                        <ul class="list-social-media">
+                            <a class="link-social-media" href="#">
+                                <li class="item-social-media">
+                                    <i class="fab fa-facebook-f"></i>
+                                </li>
+                            </a>
+                            <a class="link-social-media" href="#">
+                                <li class="item-social-media">
+                                    <i class="fab fa-google-plus-g"></i>
+                                </li>
+                            </a>
+                            <a class="link-social-media" href="#">
+                                <li class="item-social-media">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </li>
+                            </a>
+                        </ul>
+                    </div><!-- social media -->
+                    <p class="description description-second">ou use seu e-mail:</p>
+                    <form class="form">
+                        <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+                        <label class="label-input" for="">
+                            <i class="far fa-envelope icon-modify"></i>
+                            <input type="email" id  = "emailLogin"placeholder="email" required>
+                        </label>
+                        </div>
+
+                        <label class="label-input" for="">
+                            <i class="fas fa-lock icon-modify"></i>
+                            <input type="password" id  = "passwordLogin" placeholder="password"required>
+                        </label>
+
+                        <button class="btn btn-second">Login</button>
+                        <a class="password" href="#">esqueceu sua senha?</a>
+                    </form>
+                </div>
+            </div><!-- second-content -->
+        </div>
+        <script>
+            window.addEventListener("load", function () {
+                let buttonSign = document.querySelector("#signin");
+                buttonSign.addEventListener("click", function (event) {
+                    location.href = "../register.html"
+                });
+            });
+        </script>
+        <script src="js/script.js"></script>
+    </body>
+</html>

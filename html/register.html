@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/import.css">
+        <link rel="stylesheet" href="/fontawesome/css/all.min.css">
+        <link rel="script" href="/js/script.js">
+        <title>Cadastro</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="register-column">
+                <h2 class="title title-second">Criar Conta</h2>
+
+                <form  onsubmit="return mySubmitFunction(event)" action="" class="form-register" id="formulario" method="POST" name = "formulario">
+                    <label class="label-input" for="name">
+                        <i class="far fa-user icon-modify"></i>
+                        <input type="text" placeholder="Name">
+                    </label>
+
+                    <label class="label-input" for="">
+                        <i class="far fa-envelope icon-modify"></i>
+                        <input required type="email" id="emailRegister" 
+                            placeholder="Email">
+                        <span class="error"></span>
+                    </label>
+
+                    <label class="label-input" for="">
+                        <i class="fas fa-lock icon-modify"></i>
+                        <input required type="password" id="passwordRegister"
+                            placeholder="Password">
+                        <span class="error"></span>
+                    </label>
+
+                    <label class="label-input" for="">
+                        <i class="fas fa-lock icon-modify"></i>
+                        <input required type="password" id="passwordRegister2"
+                            placeholder="Confirm your password">
+                        <span class="error"></span>
+                    </label>
+
+                    <button type="submit" class="btn btn-second" id="button-register" >Cadastrar</button>
+                    <div class="fullbox">
+                        <input type="checkbox" id="checkbox" class="checkbox">
+                        <label for="agreement" id="agreement-label">Eu li e
+                            aceito os <a href="#"> termos de uso</a></label>
+                    </div>
+
+
+                </form>
+            </div><!-- second column -->
+        </div>
+        <script>
+            //evento que dispara as validações
+            function mySubmitFunction(){
+                someBug()
+                return false;
+            }
+
+
+            function mySubmitFunction(e) {
+                e.preventDefault();
+                someBug();
+                return false;
+            }       
+            const button = document.getElementById("button-register");
+            button.addEventListener("click", event =>{
+                const emailRegister = document.getElementById("emailRegister");
+                const passwordRegister = document.getElementById("passwordRegister");
+                const passwordRegister2 = document.getElementById("passwordRegister2");
+                const fields = document.querySelectorAll("[required]");
+
+
+                for(field of fields){
+                    field.addEventListener("invalid", customValidation);
+                }
+
+
+                if (emailRegister.value == "" && passwordRegister.value == "") {
+                    function customValidation(event){
+                        const field = event.target;
+                    }
+                    emailRegister.classList.add("error-input");
+                    emailRegister.focus();
+                    passwordRegister.classList.add("error-input");
+                    passwordRegister.focus();
+                    passwordRegister2.classList.add("error-input");
+                    passwordRegister2.focus();
+                    return;
+                }else{
+                    emailRegister.classList.add("validate-input");
+                    emailRegister.focus();
+                    passwordRegister.classList.add("validate-input");
+                    passwordRegister.focus();
+                    passwordRegister2.classList.add("validate-input");
+                    passwordRegister2.focus();
+                    return;
+                }
+
+                if (passwordRegister.value.lenght <=5){
+                    function customValidation(event){
+                        const field = event.target;
+                    }
+                    passwordRegister.classList.add("error-input");
+                    return;
+                }
+
+
+                
+            
+
+            });
+                
+ 
+                
+        </script>
+    </body>
+</html>
